@@ -8,14 +8,18 @@ public class Sorts {
      */
     public static void bubbleSort(int[] data) {
         int len = data.length;
+        boolean swapped = true;
         int swap;
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < len && swapped; i++) {
+            swapped = false;
             for (int j = 0; j < len - 1; j++) {
                 if (data[j] > data[j + 1]) {
                     swap = data[j + 1];
                     data[j + 1] = data[j];
                     data[j] = swap;
+
+                    swapped = true;
                 }
             }
         }
