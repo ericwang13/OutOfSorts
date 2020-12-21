@@ -54,5 +54,17 @@ public class Sorts {
      * @param data - the elements to be sorted.
      */
     public static void insertionSort(int[] data) {
+        int len = data.length;
+        int swap;
+
+        for (int i = 1; i < len; i++) {
+            int j = i;
+            while (j > 0 && data[j] < data[j - 1]) {
+                swap = data[j];
+                data[j] = data[j - 1];
+                data[j - 1] = swap;
+                j--;
+            }
+        }
     }
 }
